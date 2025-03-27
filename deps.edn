@@ -4,9 +4,10 @@
                           org.clojure/clojure {:mvn/version "1.11.1"}}}}
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         ;com.github.TogAr2/MinestomPvP {:mvn/version "master-d25a9e11e7-1"}
-        net.worldseed.multipart/WorldSeedEntityEngine {:mvn/version "11.3.0"}
+        ;net.worldseed.multipart/WorldSeedEntityEngine {:mvn/version "11.3.0"}
         com.lambdaisland/classpath {:mvn/version "0.6.58"}
         ;net.minestom/minestom-snapshots {:mvn/version "0ca1dda2fe"}
         }
  :mvn/repos {"jitpack.io" {:url "https://jitpack.io/"}
-             "wsee" {:url "https://reposilite.worldseed.online/public"}}}
+             ;"wsee" {:url "https://reposilite.worldseed.online/public"}
+             }}
