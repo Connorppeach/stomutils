@@ -14,8 +14,9 @@
            [net.minestom.server.utils.chunk ChunkSupplier]
            [net.kyori.adventure.text TextComponent Component]
                                         ;pvp
-           [io.github.togar2.pvp MinestomPvP]
-           [io.github.togar2.pvp.feature CombatFeatures])
+           ;; [io.github.togar2.pvp MinestomPvP]
+           ;; [io.github.togar2.pvp.feature CombatFeatures]
+           )
   (:gen-class))
 
 (set! *warn-on-reflection* true)
@@ -57,7 +58,7 @@
 
 (idiofy-static-enum-class Block)
 (idiofy-static-enum-class Material)
-(idiofy-static-enum-class CombatFeatures)
+;(idiofy-static-enum-class CombatFeatures)
 (defprotocol Has-Item-stack
   (item-stack ^ItemStack [this]))
 (defprotocol Has-Text-component
@@ -144,11 +145,11 @@
   (doseq [i items]
     (.addItemStack (.getInventory p) ^ItemStack (item-stack i))))
 
-(defn enable-pvp! [event-handler coll]
-  (.addChild ^GlobalEventHandler event-handler
-             (.createNode (.build
-                           (.addAll (io.github.togar2.pvp.feature.CombatFeatures/empty)
-                                    (Arrays/asList (to-array (map #(combat-features %) coll))))))))
+;; (defn enable-pvp! [event-handler coll]
+;;   (.addChild ^GlobalEventHandler event-handler
+;;              (.createNode (.build
+;;                            (.addAll (io.github.togar2.pvp.feature.CombatFeatures/empty)
+;;                                     (Arrays/asList (to-array (map #(combat-features %) coll))))))))
 
 
 (defmacro set-generator [world genfn]
@@ -160,7 +161,7 @@
 
 (defn init []
   (reset! -server (MinecraftServer/init))
-  (MinestomPvP/init)
+  ;(MinestomPvP/init)
   (reset! -instance-manager (MinecraftServer/getInstanceManager))
   (reset! -event-handler (MinecraftServer/getGlobalEventHandler)))
 
